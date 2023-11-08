@@ -45,4 +45,9 @@ def getSecretNum():
     '''Returns a string made up of NUM_DIGITS unique random digits.'''
     numbers = list('0123456789')
     random.shuffle(numbers)
+    secretNum = ''
+    for i in range(NUM_DIGITS):
+        secretNum += str(numbers[i])
+    return secretNum
+
 
