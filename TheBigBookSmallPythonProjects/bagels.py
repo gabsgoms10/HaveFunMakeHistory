@@ -15,7 +15,7 @@ When i say:  That means:
 
  For example, if the secret number was 248 and your guess was 843, the clues would be Fermi Pico.'''.format(NUM_DIGITS))
         while True:
-            secretnum = getSecretNum()
+            secretNum = getSecretNum()
             print('I have thought up a Number.')
             print('You have {} guesses to get it.'.format(MAX_GUESSES))
 
@@ -25,4 +25,24 @@ When i say:  That means:
                while len(guess) != NUM_DIGITS or guess.isdecimal():
                    print('Guess #{}: '.format(numGuesses))
                    guess = input('> ')
+
+                clues = getClues(guess, secretNum)
+                print(clues)
+                numGuesses += 1
+
+                if guess == secretNum:
+                    break
+                if numGuesses>MAX_GUESSES:
+                    print('You ran out of guesses.')
+                    print(f'The answer was {secretNum}.')
+
+            print('Do you want to play again? (yes or no)')
+            if not input('> ').lower().startswith('y'):
+                break
+        print('Thanks for playing!')
+
+def getSecretNum():
+    '''Returns a string made up of NUM_DIGITS unique random digits.'''
+    numbers = list('0123456789')
+    random.shuffle(numbers)
 
