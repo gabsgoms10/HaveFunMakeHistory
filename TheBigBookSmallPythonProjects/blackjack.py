@@ -191,6 +191,7 @@ def getMove(playerHand, money):
             moves.append('(D)ouble down')
 
         movePrompt = ', '.join(moves) + '> '
+        
         move = input(movePrompt).upper()
         if move in ('H', 'S'):
             return move
