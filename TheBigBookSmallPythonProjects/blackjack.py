@@ -158,6 +158,7 @@ def getHandValue(cards):
             value += int(rank)
 
     value += numberOfAces
+    
     for i in range(numberOfAces):
         if value + 10 <=21:
             value +=10
@@ -191,7 +192,7 @@ def getMove(playerHand, money):
             moves.append('(D)ouble down')
 
         movePrompt = ', '.join(moves) + '> '
-        
+
         move = input(movePrompt).upper()
         if move in ('H', 'S'):
             return move
