@@ -3,8 +3,8 @@
 
 int main(int argc, char const *argv[])
 {
-    char a = "C"; // single characters %c
-    char b[] = "Gab"; // array of characters %s
+    char a = 'C'; // single characters %c
+    char b[] = 'Gab'; // array of characters %s
 
     float c = 3.1453; // 4 bytes (32 bits precision) 6-7 digits %f
     double d = 3.145323423423235; // 8 bytes (64 bits precision) 15-16 digits %lf
@@ -19,6 +19,9 @@ int main(int argc, char const *argv[])
 
     int j = 2147483647; // 4 bytes (-2147483648 to 2147483647) %d
     unsigned int k = 4290999999; // 4 byter (0 to 4294967295) %u
+
+    long long int l = 2398578345708349; // 8 bytes
+    unsigned long long int m = 3453453234532432; // 8 bytes
 
  
     return 0;
